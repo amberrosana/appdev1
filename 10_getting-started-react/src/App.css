@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:
+    url('https://www.transparenttextures.com/patterns/bright-squares.png') repeat,
+    linear-gradient(135deg, #fffde7, #fff9c4, #ffe082, #ffd54f);
+  color: #5c3d00;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bento-container {
+  display: grid;
+  gap: 1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.bento-title {
+  background: rgba(255, 224, 130, 0.3);
+  padding: 2rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  color: #b45309;
+  letter-spacing: 1px;
+}
+
+.bento-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.bento-card {
+  background: rgba(255, 224, 130, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  padding: 1.2rem;
+  text-align: center;
+  transition: box-shadow 0.3s ease; 
+}
+
+.bento-card:hover {
+  box-shadow: 0 10px 22px rgba(0,0,0,0.13);
+}
+
+.bento-card img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.bento-card.why-react {
+  grid-column: span 2;
+}
+
+button {
+  background: #faecc1ff;
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; 
+
+}
+
+button:hover {
+  background: #b38c0dff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.13);
+
+}
+
+@media (max-width: 900px) {
+  .bento-row {
+    grid-template-columns: 1fr;
+  }
+}
+
