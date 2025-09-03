@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07_dom.html</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: grey;
+            color: white;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+            border-radius: 8px;
+        }
+        button:hover {
+            opacity: 0.5;
+            border-color: white;
+        }
+    </style>
+  </head>
+
+  <body style="display: flex; flex-direction: column; align-items: center; max-width: 600px; margin: auto;">
+    <h1>07 DOM</h1>
+    <p>1. Create a button in HTML that changes the background color when clicked.</p>
+    <button id="btn">
+        Click me to switch to light mode!
+    </button>
+
+    <p>2. Use prompt() to ask for your favorite color, then display it on the page.</p>
+    <p id="intro-message"></p>
+    <p id="favorite-color"></p>
+
+    <p>3. Use setTimeout() to show "This message appears after 2 seconds" inside a paragraph.</p>
+    <p>In JavaScript, the setTimeout() function delays code execution for a set time. For example, <span id="message" style="color: brown"></span> inside a paragraph. 
+        This demonstrates asynchronous behavior in JavaScript and how developers can control both timing and user focus.</p>
+
+    <script>
+        // Task One
+        const btn = document.getElementById('btn')
+        const body = document.body
+        let darkMode = true
+
+        btn.addEventListener("click", () => {
+            darkMode = !darkMode
+            if (darkMode) {
+                btn.style.backgroundColor = "grey"
+                btn.textContent = "Click me to switch to light mode!"
+                btn.style.color = "white"
+                body.style.backgroundColor = "#212121"
+                body.style.color = "white"
+                
+            }
+            else {
+                btn.style.backgroundColor = "aqua"
+                btn.textContent = "Click me to switch to dark mode!"
+                btn.style.color = "darkblue"
+                body.style.backgroundColor = "lightcyan"
+                body.style.color = "darkblue"
+            }
+        })
+
+        // Task Two
+        let introMessage = document.getElementById("intro-message")
+        let favoriteColorDisplay = document.getElementById("favorite-color")
+        let favoriteColor = prompt("What's your favorite color?")
+        if (favoriteColor) {
+            introMessage.textContent = "Your favorite color is:"
+            favoriteColorDisplay.textContent = favoriteColor
+            favoriteColorDisplay.style.color = favoriteColor
+        }
+        else {
+            introMessage.textContent = "You didn't enter a color."
+        }
+        
+        // Task Three 
+        let message = document.getElementById("message")
+        setTimeout(() => {
+            message.textContent = "This message appears after 2 seconds"
+        }, 2000)
+    </script>
+
+  </body>
+</html>
