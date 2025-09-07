@@ -1,0 +1,28 @@
+Comment Section:
+Realization: What did you notice about the commit history after rebase?
+
+I started with one commit on main (“Base commit”) and then created a branch called feature. 
+On feature, I made two commits: “Add feature” and “Extend feature.”
+
+When I switched back to main with git checkout main, the file feature.txt disappeared from my working directory.
+The two commits I made in the feature branch were also no longer visible in git log.
+I was back at the “Base commit.” 
+I then added a commit on main (“Hotfix applied”), which created hotfix.txt
+
+Switching back to feature, the commit “Hotfix applied” was not visible in git log, and hotfix.txt was gone from the working directory.
+
+After running git rebase main on the feature branch, the commit “Hotfix applied” appeared in the history after the base commit, and my feature commits were now on top of it.
+All files from both branches (hotfix.txt and feature.txt) were present now.
+
+It now looks like my commits in the feature branch were done after the hotfix, even though I originally committed them before.
+
+Using git rebase main on my feature branch updated the commit history of my feature branch to include the latest commits from main. 
+Before the rebase, my feature branch did not include changes made on main after I created the branch. 
+After rebasing, those latest changes from main were applied after the base commit in my feature branch. 
+Now, my working directory contains all the updated changes from main, and my git log shows both the main branch commits and my feature commits.
+It’s also very helpful and easy to understand because the (main) and (feature) indicators clearly show where each commit belongs.
+
+I did the same thing in another repo on my main branch and ran git rebase feature. 
+This updated the commits in my feature branch and placed my main branch commits on top of the feature branch commits.
+Now I understand that, basically, rebasing lets you move your branch’s commits so they appear after the commits from another branch.
+This is very useful as it helps you stay updated with that branch, keep your commit history organized, and apply your changes on top of the latest updates.
