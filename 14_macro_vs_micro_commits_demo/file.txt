@@ -1,0 +1,11 @@
+Comment Section:
+
+Realization: What did you notice about the commit history after switching from macro to micro commits?
+
+With the macro commit, all the unrelated changes I did were in a single commit. There's only a single commit added in the history.
+However, this is bad practice as it can cause confusion and make it harder to understand the project’s history, track down bugs, or revert specific changes.
+
+I then used git reset --hard HEAD~1 to delete the macro commit from the commit history and also delete the changes it made from my working directory.
+
+With the micro commits, I committed the unrelated changes one by one. There are 3 commits added in the commit history.
+This is good practice as the specific changes made can be easily understood. 
