@@ -1,2 +1,14 @@
 Line 1
 Line 2
+
+Comment Section:
+Realization: What did you notice about the file and commit history after revert?
+
+When I used git revert HEAD, it removed the changes done with my last commit "Add Line 3". 
+The text "Line 3" was deleted from file.txt.
+
+When I used git log --oneline, my "Add Line 3" commit was still there, it wasn't removed from the commit history.
+However, there is another commit created which reverted the changes made by my previous commit.
+
+I realized that git revert HEAD undo the changes made by my previous commit but doesn't delete it from the commit history.
+Instead, it creates a new commit that reverts what the previous commit did.
