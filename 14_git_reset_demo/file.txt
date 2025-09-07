@@ -1,2 +1,13 @@
 Line 1
 Line 2
+
+Comment Section:
+Realization: What did you notice about the file and commit history after reset?
+
+I used git reset --hard with the "Add line 2" commit.
+When I checked the history with git log, the commit after "Add Line 2" (which is "Add Line 3") was gone.
+
+The "Line 3" text in file.txt was also gone. 
+
+It removed the commits after "Add line 2" and also removed the changes from my working directory.
+I realized that git reset --hard <commit-hash> erases all commits made after the specified commit, removes their changes from my working directory, and deletes them from the commit history in git log.
