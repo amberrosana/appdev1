@@ -1,0 +1,14 @@
+Comment Section:
+Realization: What did you notice about the commit history after merge?
+
+I committed “Base work” in the main branch. Then I switched to the feature branch, which already existed (so I just ran git checkout feature). 
+I made one commit (“Add feature”) in the feature branch.
+
+I switched back to main and added a commit (“Hotfix applied”). 
+At this point, git log on main did not show the commit from the feature branch.
+
+When I ran git merge feature, the commit from the feature branch appeared in the log, and Git created a new merge commit that combined the commits from the feature branch with my main branch commits. 
+The merge has applied all the changes from the feature branch to main.
+
+Unlike rebase, which moves the current branch’s commits on top of the specified branch (making it look like the commits were made after the other branch), merge does not rewrite history. 
+It simply combines commits, keeping their original order. I tried it in another file, and the commits made first (regardless of branch) were logged in the correct order in git log.
