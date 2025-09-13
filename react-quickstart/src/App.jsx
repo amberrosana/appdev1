@@ -33,11 +33,19 @@ function AboutPage() {
 }
 
 function App() {
+  let content
+  let isAdmin = false
+
+  if (isAdmin) {
+    content = <AdminPanel />
+  }
+  else {
+    content = <AboutPage />
+  }
+
   return (
     <>
-      <AdminPanel />
-      <Button />
-      <AboutPage />
+      {content}
     </>
   )
 }
