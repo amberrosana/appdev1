@@ -13,13 +13,19 @@ function AdminPanel() {
 }
 
 function AboutPage() {
+  const company = {
+    name: "MyCompany",
+    address: "Sampaloc, Apalit, Pampanga",
+    logo: "https://i.pinimg.com/1200x/30/fd/63/30fd63cfd90bd7bfeda55fae612f97e8.jpg"
+  }
+
   return(
     <>
       <h1 style={{color: "aquamarine"}}>This is the About Page</h1>
-      <p>This is where we can put our company details. <br/> Like its history, mission, vision, etc. </p>
+      <p>{company.name} is based in <br />{company.address}</p>
       <img 
-        alt="logo"
-        src="https://i.pinimg.com/1200x/30/fd/63/30fd63cfd90bd7bfeda55fae612f97e8.jpg"
+        alt={company.name + "logo"}
+        src={company.logo}
         className="logo"
       />
     </>
