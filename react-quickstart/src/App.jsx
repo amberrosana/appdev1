@@ -30,7 +30,7 @@ const user = {
   imageSize: 90,
 };
 
-export default function Profile() {
+function Profile() {
   return (
     <>
       <h1>{user.name}</h1>
@@ -45,4 +45,58 @@ export default function Profile() {
       />
     </>
   );
+}
+
+function AdminPanel() {
+  return (
+    <h1>This is the Admin Panel</h1>
+  )
+}
+
+function LoginForm() {
+  return (
+    <h1>Login Form</h1>
+  )
+}
+
+// Conditional Rendering using if...else statement
+function App1() {
+  let content;
+  let isLoggedIn = false;
+
+  if (isLoggedIn) {
+    content = <AdminPanel />;
+  } else {
+    content = <LoginForm />;
+  }
+
+  return (
+    <div>
+      {content} 
+    </div>
+  );
+}
+
+// Conditional Rendering using Conditional (ternary) operator
+function App2() {
+  let isLoggedIn = true;
+  return (
+    <div>
+      {isLoggedIn ? (
+        <AdminPanel />
+      ) : (
+        <LoginForm />
+      )}
+  </div>
+  )
+}
+
+// Conditional Rendering using logical && syntax
+export default function App3() {
+  let isLoggedIn = true;
+  return (
+    <div>
+      {isLoggedIn && <AdminPanel />}
+    </div>
+  )
 }
