@@ -1,5 +1,5 @@
 import './App.css'
-
+import { useState } from 'react';
 
 function App() {
 
@@ -26,7 +26,7 @@ const products = [
   { title: 'Apple', isFruit: true, id: 3 },
 ];
 
-export default function ShoppingList() {
+function ShoppingList() {
   const listItems = products.map(product =>
     <li
       key={product.id}
@@ -40,5 +40,47 @@ export default function ShoppingList() {
 
   return (
     <ul>{listItems}</ul>
+  );
+}
+
+// RESPONDING TO EVENTS
+// function MyButton() {
+//   const [count, setCount] = useState(0);
+  
+
+//   function handleClick() {
+//     alert('You clicked me!');
+//   }
+
+//   return (
+//     <button onClick={handleClick}>
+//       Click me
+//     </button>
+//   );
+// }
+
+// UPDATNG THE SCREEN / USING HOOKS
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton />
+      <MyButton />
+    </div>
   );
 }
