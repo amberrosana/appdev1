@@ -61,7 +61,15 @@ function ShoppingList() {
 
 // UPDATNG THE SCREEN / USING HOOKS
 
-function MyButton() {
+function MyButton({ count, onClick }) {
+  return (
+	  <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
+export default function MyApp() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
@@ -69,18 +77,10 @@ function MyButton() {
   }
 
   return (
-    <button onClick={handleClick}>
-      Clicked {count} times
-    </button>
-  );
-}
-
-export default function MyApp() {
-  return (
     <div>
-      <h1>Counters that update separately</h1>
-      <MyButton />
-      <MyButton />
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
     </div>
   );
 }
