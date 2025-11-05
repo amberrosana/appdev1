@@ -7,10 +7,10 @@ ul {
   align-items: center;
   row-gap: 1rem;
   column-gap: 8rem; 
-}
+}                                
 
 li {
-  display: contents; 
+  display: contents;
 }
 
 li img {
