@@ -1,8 +1,23 @@
-export default function Profile() {
+import './App.css'
+
+function Profile() {
   return (
     <img
-      src="https://i.imgur.com/MK3eW3Am.jpg"
+      src="https://i.imgur.com/MK3eW3As.jpg"
       alt="Katherine Johnson"
     />
-  )
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h2>Amazing scientists</h2>
+      <div className="profile-grid">
+        <Profile />
+        <Profile />
+        <Profile />
+      </div>
+    </section>
+  );
 }
